@@ -26,7 +26,7 @@ int main(int argc, const char *argv[]) {
 		}
 
 		msg_len = (size_t)attr.mq_msgsize;
-		msg_ptr = calloc(msg_len / sizeof(char), sizeof(char));
+		msg_ptr = calloc((msg_len / sizeof(char))+1, sizeof(char));
 	}
 
 	if (mq_receive(mqdes, msg_ptr, msg_len, NULL) == -1) {
