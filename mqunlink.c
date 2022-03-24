@@ -14,7 +14,7 @@ int main(int argc, const char *argv[]) {
 	name = argv[1];
 
 	if (mq_unlink(name) == -1) {
-		perror("failed to open message queue");
+		perror("failed to unlink message queue");
 		exit(EXIT_FAILURE);
 	}
 
